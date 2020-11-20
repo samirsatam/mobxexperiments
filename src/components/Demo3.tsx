@@ -1,6 +1,6 @@
 import * as React from "react";
 import "../styles.css";
-import { observable, autorun, action } from "mobx";
+import { observable, action } from "mobx";
 
 export function Demo3() {
   const cart = observable.object({
