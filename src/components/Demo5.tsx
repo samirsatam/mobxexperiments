@@ -20,7 +20,7 @@ class Cart {
 export function Demo5() {
   const cart = new Cart();
   cart.addItem("Power Cable", 1);
-  //cart.addItem("Shoes", 1);
+  cart.addItem("Shoes", 1);
   return (
     <>
       <div className="App">

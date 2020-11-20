@@ -12,7 +12,7 @@ export function Demo4() {
   });
 
   // 3. Update item
-  setTimeout(() => item.set(50), 5000);
+  setTimeout(() => item.set(50), 3000);
   return (
     <>
       <ItemComponent />

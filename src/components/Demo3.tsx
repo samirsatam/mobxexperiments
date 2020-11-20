@@ -1,6 +1,10 @@
 import * as React from "react";
 import "../styles.css";
-import { observable, action } from "mobx";
+import { observable, autorun, action } from "mobx";
+
+function delay(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
 export function Demo3() {
   const cart = observable.object({
@@ -18,12 +22,29 @@ export function Demo3() {
       }
     }
   });
-  console.log(cart.description);
 
   const addItem = action((name: string) => {
     cart.items.push(name);
   });
-  addItem("Apple");
+
+  console.log(cart.description);
+
+  //addItem("Apple");
+  //addItem("Orange");
+  //addItem("Kiwi");
+  (async () => {
+    await delay(1);
+    addItem("Apple");
+  })();
+  (async () => {
+    await delay(2000);
+    addItem("Orange");
+  })();
+  (async () => {
+    await delay(3000);
+    addItem("Kiwi");
+  })();
+
   console.log(cart.description);
 
   // const removeItem = action((name: string) => {
